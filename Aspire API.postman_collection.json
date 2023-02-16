@@ -1,0 +1,413 @@
+{
+	"info": {
+		"_postman_id": "21446f21-d4b7-4cf5-8da7-5d041a13c658",
+		"name": "Aspire API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login Request",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://aspire-loan-api.test/api/login",
+							"protocol": "http",
+							"host": [
+								"aspire-loan-api",
+								"test"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Test User",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "testuser1@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://aspire-loan-api.test/api/register",
+							"protocol": "http",
+							"host": [
+								"aspire-loan-api",
+								"test"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|QybkUHicoRRN4PtVWQuW3jIPcYWqNmWcAw4lPw7w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://aspire-loan-api.test/api/logout",
+							"protocol": "http",
+							"host": [
+								"aspire-loan-api",
+								"test"
+							],
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Loan",
+			"item": [
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "List All Loans For Admin",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://aspire-loan-api.test/api/loan",
+									"protocol": "http",
+									"host": [
+										"aspire-loan-api",
+										"test"
+									],
+									"path": [
+										"api",
+										"loan"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Loan Status Update (Approve/Decline)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "approved",
+											"value": "1",
+											"description": "Approved should be either zero or one",
+											"type": "text"
+										},
+										{
+											"key": "comments",
+											"value": "",
+											"description": "Comments is a nullable field",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://aspire-loan-api.test/api/loan/admin/approval/1",
+									"protocol": "http",
+									"host": [
+										"aspire-loan-api",
+										"test"
+									],
+									"path": [
+										"api",
+										"loan",
+										"admin",
+										"approval",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "1|CtXY8QI4HsbA4VrMVrEbdho3P1A3f6w992RRJn52",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "List loan for User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://aspire-loan-api.test/api/loan",
+							"protocol": "http",
+							"host": [
+								"aspire-loan-api",
+								"test"
+							],
+							"path": [
+								"api",
+								"loan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Loan",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "amount",
+									"value": "80000",
+									"description": "Amount filed should be numeric",
+									"type": "text"
+								},
+								{
+									"key": "term",
+									"value": "7",
+									"description": "Term filed should be numeric",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://aspire-loan-api.test/api/loan/create",
+							"protocol": "http",
+							"host": [
+								"aspire-loan-api",
+								"test"
+							],
+							"path": [
+								"api",
+								"loan",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Loan",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "2|QybkUHicoRRN4PtVWQuW3jIPcYWqNmWcAw4lPw7w",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Repay",
+			"item": [
+				{
+					"name": "Repayments",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "amount",
+									"value": "5000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://aspire-loan-api.test/api/loan/1/repayments",
+							"protocol": "http",
+							"host": [
+								"aspire-loan-api",
+								"test"
+							],
+							"path": [
+								"api",
+								"loan",
+								"1",
+								"repayments"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "2|QybkUHicoRRN4PtVWQuW3jIPcYWqNmWcAw4lPw7w",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}

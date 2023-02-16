@@ -44,3 +44,8 @@
 - This projects uses *Laravel Modules* structure with *Service Class* design pattern
 - Laravel modules structure will make each module look like a lite weight app
 - Inside laravel modules, service class has been used to make the controller to handle only to get the input request and used to send the response message
+
+
+### Postman Collection
+- Added postman collection in the root folder of the project.
+- Name of the collect - Aspire API.postman_collection.json
