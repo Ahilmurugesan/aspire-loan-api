@@ -1,0 +1,11 @@
+{
+    "name": "Repay",
+    "alias": "repay",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Repay\\Providers\\RepayServiceProvider"
+    ],
+    "files": []
+}

@@ -1,0 +1,6 @@
+{
+    "Auth": true,
+    "Loan": true,
+    "Repay": true,
+    "Proposal": true
+}
