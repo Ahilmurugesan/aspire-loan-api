@@ -97,7 +97,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "2|QybkUHicoRRN4PtVWQuW3jIPcYWqNmWcAw4lPw7w",
+									"value": "",
 									"type": "string"
 								}
 							]
@@ -299,8 +299,26 @@
 					"name": "Show Loan",
 					"request": {
 						"method": "GET",
-						"header": [],
-						"url": null
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://aspire-loan-api.test/api/loan/1",
+							"protocol": "http",
+							"host": [
+								"aspire-loan-api",
+								"test"
+							],
+							"path": [
+								"api",
+								"loan",
+								"1"
+							]
+						}
 					},
 					"response": []
 				}
